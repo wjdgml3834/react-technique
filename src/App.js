@@ -10,6 +10,11 @@ import "./App.css";
 // ES5 형태의 코드로 변환해야 합니다.
 
 function App() {
+  // function 키워드를 사용하여 컴포넌트를 만들었다.
+  // 이러한 컴포넌트를 함수형 컴포넌트라고 한다.
+  // 프로젝트에서 컴포넌트를 렌더링하면 (=보여준다) 함수에서 반환하고 있는 내용을 보여준다.
+  // 함수에서 반환하는 내용을 보면 마치 HTML을 작성한것 같다.
+  // 이런 코드를 JSX라고 부릅니다.
   return (
     <div className="App">
       <header className="App-header">
