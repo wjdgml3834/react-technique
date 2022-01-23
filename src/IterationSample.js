@@ -32,8 +32,18 @@ const IterationSample = () => {
     setUserInp("");
   };
 
+  const onRemove = (id) => {
+    const removeBrand = brandName.filter((item) => item.id !== id);
+    // filter => 배열에서 특정 원소 제외
+    setBrandName(removeBrand);
+  };
+
   const brandList = brandName.map((item) => (
-    <li key={item.id}>{item.brand}</li>
+    <li key={item.id}>
+      {item.brand}
+      <button onClick={() => onRemove(item.id)}>삭제</button>
+      {/* 인자를 전달할때는 익명함수로 한번 써주고 해야 전달 가능 */}
+    </li>
   ));
   return (
     <>
