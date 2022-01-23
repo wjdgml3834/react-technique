@@ -1,7 +1,5 @@
-import MyComponent from "./Mycomponent";
-
 function App() {
-  return <MyComponent>리액트</MyComponent>;
+  return null;
 }
 
 export default App;
