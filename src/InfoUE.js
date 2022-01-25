@@ -5,8 +5,13 @@ const InfoUE = () => {
   const [singerName, setSingerName] = useState("");
 
   useEffect(() => {
-    console.log("마운트 될때만 실행");
-  }, []);
+    console.log(fruitName);
+  }, [fruitName]);
+  // 특정값이 업데이트 될 때만 실행시키고 싶을 때
+
+  // useEffect(() => {
+  //   console.log("마운트 될때만 실행");
+  // }, []);
   // 컴포넌트가 화면에 처음 렌더링 될 때만 실행하고, 업데이트 때는 실행하지 않는다.
 
   // useEffect(() => {
