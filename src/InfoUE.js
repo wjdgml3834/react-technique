@@ -5,8 +5,18 @@ const InfoUE = () => {
   const [singerName, setSingerName] = useState("");
 
   useEffect(() => {
+    console.log("렌더링");
     console.log(fruitName);
+    return () => {
+      console.log("clean up");
+      console.log(fruitName);
+    };
   }, [fruitName]);
+  // 컴포넌트가 언마운트 되기전이나 업데이트 되기 직전에 어떠한 작업을 수행하고 싶다면 cleanup 함수를 반환해야한다.
+
+  // useEffect(() => {
+  //   console.log(fruitName);
+  // }, [fruitName]);
   // 특정값이 업데이트 될 때만 실행시키고 싶을 때
 
   // useEffect(() => {
