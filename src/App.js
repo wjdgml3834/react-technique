@@ -1,7 +1,5 @@
-import IterationSample from "./IterationSample";
-
 function App() {
-  return <IterationSample />;
+  return null;
 }
 
 export default App;
