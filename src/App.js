@@ -5,23 +5,17 @@ import About from "./About";
 function App() {
   return (
     <div>
-      <ul>
-        <li>
-          <Link to="/">홈</Link>
-        </li>
-        <li>
-          <Link to="/about">소개</Link>
-        </li>
-      </ul>
-      <hr />
       <Route path="/" component={Home} exact={true} />
-      <Route path="/about" component={About} />
+      <Route path={["/about", "/info"]} component={About} />
     </div>
   );
 }
 
 export default App;
 
-// Link 컴포넌트를 사용하여 다른 주소로 이동
-// a태그와 달리 페이지 주소만 변경해주고, 페이지를 새로 불러오지는 않는다.
-// 사용법: <Link to="주소">내용 </Link>
+// Route 하나에 여러개의 path를 지정하는 것은 최신 버전의 리액트 라우터 v5부터 적용된 기능
+// 예전에는 다른 url에 같은 컴포넌트를 보여주려면
+// <Route path="about" component={About}/>
+// <Route path="/info" component={About}/>
+// 이런식으로 진행했다.
+// 하지만 이제 path props를 배열로 설정해주면 여러 경로에서 같은 컴포넌트를 보여줄 수 있다.
