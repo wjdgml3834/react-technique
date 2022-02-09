@@ -1,7 +1,7 @@
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
-import Profile from "./Profile";
+import Profiles from "./Profiles";
 
 function App() {
   return (
@@ -14,15 +14,22 @@ function App() {
           <Link to="/about">소개</Link>
         </li>
         <li>
-          <Link to="/profile/kakao">카카오 프로필</Link>
-        </li>
-        <li>
-          <Link to="/profile/naver">네이버 프로필</Link>
+          <Link to="/profiles">프로필</Link>
         </li>
       </ul>
-      <Route path="/" component={Home} exact={true} />
-      <Route path={["/about", "/info"]} component={About} />
-      <Route path="/profile/:companyName" component={Profile} />
+      <Switch>
+        <Route path="/" component={Home} exact={true} />
+        <Route path={["/about", "/info"]} component={About} />
+        <Route path="/profiles" component={Profiles} />
+        <Route
+          render={({ location }) => (
+            <div>
+              <h2>이 페이지는 존재하지 않습니다.</h2>
+              <p>{location.pathname}</p>
+            </div>
+          )}
+        />
+      </Switch>
     </div>
   );
 }
